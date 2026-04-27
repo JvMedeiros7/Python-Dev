@@ -167,7 +167,7 @@ print(f"Somando todos os seus juros foram R$ {jurostot:.2f}") '''
 
 #Exercicio 5.13 - Contador de Dívidas com Juros
 
-# --- Variáveis Iniciais ---
+''' # --- Variáveis Iniciais ---
 mes = 1
 total_pago = 0
 jurostot = 0
@@ -216,6 +216,74 @@ else:
     print(f"Meses para pagar: {mes - 1}")
     print(f"Total pago (Dinheiro total): R$ {total_pago:.2f}")
     print(f"Total de juros pagos (Taxas): R$ {jurostot:.2f}")
-    print("--" * 20)
+    print("--" * 20) ''' 
+
+#Exercicio 5.14 
+
+''' s = 0
+x = 0
+
+while True:
+    nint = float(input("\nDIGITE UM NÚMERO PARA SOMAR E FAZER A MÉDIA:               / (DIGITE 0 PARA SAIR)")) 
+    if nint == 0:
+        break
+    s += nint 
+    x += 1 
+print(f"Soma dos números digitados {s}" )
+print(f"Quantidade de números digitados {x}")
+
+media = s/x
+
+print(f"A media dos números digitados é {media}") ''' 
 
 
+# Exercício 5.15 - Sistema de Vendas Organizado
+s = 0        # Acumulador do valor total
+p1, x1 = 0.50, 0
+p2, x2 = 1.00, 0
+p3, x3 = 4.00, 0
+p5, x5 = 7.00, 0
+p9, x9 = 8.00, 0
+
+while True:
+    produto = int(input("Qual produto você deseja? 1/2/3/5/9 (0 para sair): "))
+    
+    # 1. Condição de parada (Saída imediata)
+    if produto == 0:
+        break
+
+    # 2. Validação: Só pedimos a quantidade se o código existir no sistema
+    if produto in [1, 2, 3, 5, 9]:
+        qtde = int(input(f"Quantidade do produto {produto}: "))
+        
+        # Garantindo que a quantidade seja positiva (Boa prática de Engenharia)
+        if qtde < 0:
+            print("Quantidade inválida! Use números positivos.")
+            continue
+
+        # 3. Processamento dos dados
+        if produto == 1:
+            s += p1 * qtde
+            x1 += qtde
+        elif produto == 2:
+            s += p2 * qtde
+            x2 += qtde
+        elif produto == 3:
+            s += p3 * qtde
+            x3 += qtde
+        elif produto == 5:
+            s += p5 * qtde
+            x5 += qtde
+        elif produto == 9:
+            s += p9 * qtde
+            x9 += qtde
+    else:
+        # Se o código não estiver na lista [1, 2, 3, 5, 9]
+        print("Código inválido! Tente novamente.")
+
+# 4. Saída de dados (Relatório Final)
+print("-" * 30)
+print(f"FECHAMENTO DO CAIXA")
+print(f"Total da compra: R$ {s:.2f}")
+print(f"Quantidades: Prod 1: ({x1}) | Prod 2: ({x2}) | Prod 3: ({x3}) | Prod 5: ({x5}) | Prod 9: ({x9})")
+print("-" * 30)
