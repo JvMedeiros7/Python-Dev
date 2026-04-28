@@ -287,7 +287,7 @@ print("-" * 30)77 '''
 
 #Programa 5.1
 
-valor = int(input("Digite o valor a pagar:"))
+''' valor = int(input("Digite o valor a pagar:"))
 cedulas = 0
 atual = 0
 apagar = valor
@@ -307,5 +307,9 @@ while True:
             atual == 5
         elif atual == 5:
             atual = 1
-        cedulas = 0
-        
+        cedulas = 0 ''' 
+
+
+
+preciso fazer alterações
+coommit git 
