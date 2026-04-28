@@ -238,7 +238,8 @@ print(f"A media dos números digitados é {media}") '''
 
 
 # Exercício 5.15 - Sistema de Vendas Organizado
-s = 0        # Acumulador do valor total
+
+''' s = 0        
 p1, x1 = 0.50, 0
 p2, x2 = 1.00, 0
 p3, x3 = 4.00, 0
@@ -248,20 +249,17 @@ p9, x9 = 8.00, 0
 while True:
     produto = int(input("Qual produto você deseja? 1/2/3/5/9 (0 para sair): "))
     
-    # 1. Condição de parada (Saída imediata)
     if produto == 0:
         break
 
-    # 2. Validação: Só pedimos a quantidade se o código existir no sistema
     if produto in [1, 2, 3, 5, 9]:
         qtde = int(input(f"Quantidade do produto {produto}: "))
         
-        # Garantindo que a quantidade seja positiva (Boa prática de Engenharia)
         if qtde < 0:
             print("Quantidade inválida! Use números positivos.")
             continue
 
-        # 3. Processamento dos dados
+
         if produto == 1:
             s += p1 * qtde
             x1 += qtde
@@ -278,12 +276,36 @@ while True:
             s += p9 * qtde
             x9 += qtde
     else:
-        # Se o código não estiver na lista [1, 2, 3, 5, 9]
         print("Código inválido! Tente novamente.")
 
-# 4. Saída de dados (Relatório Final)
+
 print("-" * 30)
 print(f"FECHAMENTO DO CAIXA")
 print(f"Total da compra: R$ {s:.2f}")
 print(f"Quantidades: Prod 1: ({x1}) | Prod 2: ({x2}) | Prod 3: ({x3}) | Prod 5: ({x5}) | Prod 9: ({x9})")
-print("-" * 30)
+print("-" * 30)77 ''' 
+
+#Programa 5.1
+
+valor = int(input("Digite o valor a pagar:"))
+cedulas = 0
+atual = 0
+apagar = valor
+while True:
+    if atual <= apagar:
+        apagar -= atual
+        cedulas += 1 
+    else:
+        print(f"{cedulas} cédulas de R$ {atual}") 
+        if apagar == 0:
+            break
+        if atual == 50:
+            atual == 20
+        elif atual == 20:
+            atual = 10
+        elif atual == 10:
+            atual == 5
+        elif atual == 5:
+            atual = 1
+        cedulas = 0
+        
