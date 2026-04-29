@@ -220,7 +220,14 @@ print(linguagens) '''
 
 # Para ver o tamanho dos objetos = [].len
 
-linguagens = ["Python" , "Js" , "c" , "Java" , "csharp"]
+''' linguagens = ["Python" , "Js" , "c" , "Java" , "csharp"]
 
-print(len(linguagens[0])) # 5   
+print(len(linguagens)) # 5   
+print(len(linguagens[0])) #6 ''' 
+ 
+# Serve para ordenar iteráveis = [].sorted
 
+''' linguagens = ["python", "js", "c", "java", "csharp"]
+
+print(sorted(linguagens, key=lambda x: len(x)))  # ["c", "js", "java", "python", "csharp"]
+print(sorted(linguagens, key=lambda x: len(x), reverse=True))  # ["python", "csharp", "java", "js", "c"] ''' 
