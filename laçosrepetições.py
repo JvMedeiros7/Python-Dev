@@ -287,29 +287,42 @@ print("-" * 30)77 '''
 
 #Programa 5.1
 
-''' valor = int(input("Digite o valor a pagar:"))
-cedulas = 0
-atual = 0
+''' valor = float(input("Digite o valor a pagar: "))
+atual = 100 
 apagar = valor
-while True:
-    if atual <= apagar:
+
+while apagar > 0.0001:
+    cedulas = 0
+
+    while atual <= apagar + 0.00001:
         apagar -= atual
-        cedulas += 1 
+        cedulas += 1
+
+    if cedulas > 0:
+        print(f"{cedulas} de R$ {atual:.3f}")
+
+    if atual == 100:
+        atual = 50
+    elif atual == 50:
+        atual = 20
+    elif atual == 20:
+        atual = 10
+    elif atual == 10:
+        atual = 5
+    elif atual == 5:
+        atual = 1
+    elif atual == 1:
+        atual = 0.50
+    elif atual == 0.50:
+        atual = 0.10
+    elif atual == 0.10:
+        atual = 0.05
+    elif atual == 0.05:
+        atual = 0.02
+    elif atual == 0.02:
+        atual = 0.01
+    elif atual == 0.01:
+        atual = 0.001
     else:
-        print(f"{cedulas} cédulas de R$ {atual}") 
-        if apagar == 0:
-            break
-        if atual == 50:
-            atual == 20
-        elif atual == 20:
-            atual = 10
-        elif atual == 10:
-            atual == 5
-        elif atual == 5:
-            atual = 1
-        cedulas = 0 ''' 
+        apagar = 0''' 
 
-
-
-preciso fazer alterações
-coommit git 

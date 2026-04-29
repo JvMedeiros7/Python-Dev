@@ -99,18 +99,20 @@ print("""
     =========== """
       ) ''' 
 
-valor_compra = int(input("Valor da compra?"))
+''' valor_compra = int(input())
 
 # TODO: Implemente a estrutura condicional para decidir e imprimir a mensagem correta
 # Dica: Use if, elif e else para comparar o valor_compra com as faixas especificadas no enunciado.
 
 if valor_compra >= 30 and valor_compra < 75:
-  print("Obrigado por comprar conosco")
+  print("Obrigado por comprar conosco!")
 elif valor_compra >= 75 and valor_compra < 150:
-  print("Parabéns! Você ganhou um brinde!")
+  print("Parabens! Voce ganhou um brinde!")
 elif valor_compra >= 150 and valor_compra < 250:
-  print("Desconto de 10 reais aplicado")
+  print("Desconto de 10 reais aplicado!")
   valor_compra = valor_compra - 10 
 elif valor_compra >= 250:
   print("Desconto de 25 reais aplicado!")
-  valor_compra = valor_compra - 25
+  valor_compra = valor_compra - 25 ''' 
+
+
