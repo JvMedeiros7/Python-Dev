@@ -20,21 +20,21 @@ print(pais) '''
 
 #Metodos de clase:
 
-#().count - Contar quantos elementos tem na tupla
+#().count - Contar quantos elementos especificos tem na tupla
  
-cores = ("Vermelho" , "Azul" , "Verde" , "Azul" , )
+''' cores = ("Vermelho" , "Azul" , "Verde" , "Azul" , )
 
 print(cores.count("Vermelho")) #1
-print(cores.count("Azul")) #2
-
+print(cores.count("Azul")) #2 ''' 
+ 
 #().index - Saber localização exata na tupla
 
-cores = ("Vermelho" , "Azul" , "Verde" , "Azul" , )
+''' cores = ("Vermelho" , "Azul" , "Verde" , "Azul" , )
 
 print(cores.index("Verde")) #2
 
-#().len 
+#().len - Saber a quantidade de elemntos que temos na tupla
 
 linguagens = ("Python" , "Js" , "C" , "Java" , "csharp")
 
-print(len(linguagens))
+print(len(linguagens)) ''' 

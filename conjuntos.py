@@ -103,7 +103,7 @@ sorteio.copy()
 
 print(sorteio) ''' 
 
-#{}.discard - Descarta valores especifícos
+#{}.discard - Descarta valores especifícos - Ignora erros - bom para erros que não gerem problemas maiores
 
 ''' numeros = {1,2,3,1,2,4,5,5,6,7,8,9,0}
 
@@ -116,7 +116,7 @@ print(numeros) '''
 
 #{}.pop - Descarta valores 1 a 1 
 
-numeros = {1,2,3,4,5,6,7,8,9,0}
+''' numeros = {1,2,3,4,5,6,7,8,9,0}
 
 print(numeros)
 
@@ -126,4 +126,27 @@ print(numeros.pop())
 print(numeros.pop())
 print(numeros.pop())
 
+print(numeros) ''' 
+
+#{}.remove - Não ignora erros - KeyERROR se não tiver o elemento
+
+''' numeros = {1,2,3,4,5,6,7,8,9,0}
+
 print(numeros)
+
+numeros.remove(2)
+
+print(numeros) ''' 
+
+#{}.len - Para tirar o tamanho do nosso conjunto 
+
+''' numeros = {1,2,3,4,5,6,7,8,9,0}
+
+print(len(numeros)) '''
+
+#{}.in - Verificar se um elemento está dentro do conjunto
+
+''' numeros = {1,2,3,4,5,6,7,8,9,0}
+
+print(1 in numeros)
+print(10 in numeros) ''' 
