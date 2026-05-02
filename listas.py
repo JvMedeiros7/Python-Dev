@@ -231,3 +231,47 @@ print(len(linguagens[0])) #6 '''
 
 print(sorted(linguagens, key=lambda x: len(x)))  # ["c", "js", "java", "python", "csharp"]
 print(sorted(linguagens, key=lambda x: len(x), reverse=True))  # ["python", "csharp", "java", "js", "c"] ''' 
+
+
+#Livro Python
+
+'''z = [15 , 8 , 9]
+
+print(z[0])
+
+z[0] = 7 
+
+print(z[0])'''
+
+#Programa 6.2: Cálculo da média com notas digitadas
+
+'''notas = [0, 0, 0, 0, 0, 0]
+soma = 0 
+x = 0 
+
+while x < 6:
+    notas[x] = float(input(f"Nota {x}:"))
+    soma += notas[x]
+    x += 1
+
+x = 0 
+
+while x > 6:
+    print(f"Nota {x} : {notas[x]:6.2f}")
+    x +=1 
+ 
+print(f"media: {soma / len(notas):.2f}")'''
+
+#Programa 6.3: Apresentação de Números
+
+numeros = [0, 0, 0, 0, 0]
+x = 0
+
+while x < 5:
+    numeros[x] = int(input(f"Números {x+1}:"))
+    x += 1
+while True:
+    escolhido = int(input("Que posição você quer imprimir(0 para sair):"))
+    if escolhido == 0:
+        break
+    print (f"Você escolheu o número: {numeros[escolhido - 1]}")

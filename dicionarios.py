@@ -177,7 +177,7 @@ print(resultado)'''
 
 #{}.in - Vefificar se uma chave está ou não no dicionário
 
-contatos = {
+'''contatos = {
     "guilherme@gmail.com": {"nome": "Guilherme", "telefone": "3333-2221"},
     "giovanna@gmail.com": {"nome": "Giovanna", "telefone": "3443-2121"},
     "chappie@gmail.com": {"nome": "Chappie", "telefone": "3344-9871"},
@@ -194,4 +194,4 @@ resultado = "idade" in contatos["guilherme@gmail.com"]  # False
 print(resultado)
 
 resultado = "telefone" in contatos["giovanna@gmail.com"]  # True
-print(resultado)
+print(resultado)'''
