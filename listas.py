@@ -264,7 +264,7 @@ print(f"media: {soma / len(notas):.2f}")'''
 
 #Programa 6.3: Apresentação de Números
 
-numeros = [0, 0, 0, 0, 0]
+'''numeros = [0, 0, 0, 0, 0]
 x = 0
 
 while x < 5:
@@ -274,4 +274,47 @@ while True:
     escolhido = int(input("Que posição você quer imprimir(0 para sair):"))
     if escolhido == 0:
         break
-    print (f"Você escolheu o número: {numeros[escolhido - 1]}")
+    print (f"Você escolheu o número: {numeros[escolhido - 1]}")'''
+
+#Função Len
+
+'''lista = [ 1 , 2 ,3 , 4, 5, 6 ]
+
+print(len[lista])'''
+
+#Podemos Usar a função len para controlar o limite dos índices:
+
+'''L = [ 1 , 2 , 3 , 4 , 5 , 6 ]
+x = 0 
+
+while x < len(L):
+    print(L[x])
+    x += 1 
+'''
+#Função L.append[valor]
+
+'''L = []
+
+L.append("a")
+
+print(L)'''
+
+
+#Programa 6.6: Adição de elementos a lista
+
+L = []
+s = 0
+while True:
+    n = int(input("Digite um número(0 sai):"))
+    if n == 0:
+        break
+    s += n 
+    L.append(n)
+
+x = 0 
+while x < len(L):
+    print(f"O números digitado fora na rodada {x+1} foi:" , L[x])
+    x += 1 
+
+print(f"A soma de todos os números foi: {s}")
+
