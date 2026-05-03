@@ -302,7 +302,7 @@ print(L)'''
 
 #Programa 6.6: Adição de elementos a lista
 
-L = []
+'''L = []
 s = 0
 while True:
     n = int(input("Digite um número(0 sai):"))
@@ -316,5 +316,13 @@ while x < len(L):
     print(f"O números digitado fora na rodada {x+1} foi:" , L[x])
     x += 1 
 
-print(f"A soma de todos os números foi: {s}")
+print(f"A soma de todos os números foi: {s}")'''
+
+#Podemos adicionar listas com + 
+
+L = []
+
+L = L + [1]
+
+print(L)
 
