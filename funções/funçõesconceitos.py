@@ -116,13 +116,62 @@ criar_carro(modelo="Palio", ano=1999, placa="ABC-1234", marca="Fiat", motor="1.0
 
 #objetos_de_primeira_classe
 
-def somar(a, b):
+'''def somar(a, b):
     return a + b
+
+def subtrair(a, b):
+    return a - b
 
 
 def exibir_resultado(a, b, funcao):
     resultado = funcao(a, b)
-    print(f"O resultado da operação {a} + {b} = {resultado}")
+    print(f"O resultado da operação é = {resultado}")
 
 
-exibir_resultado(10, 10, somar)  # O resultado da operação 10 + 10 = 20
+exibir_resultado(10, 10, somar)  # O resultado da operação é = 20
+exibir_resultado(10, 10, subtrair) # O resultado da operação é = 0 
+
+op = somar #Variável com função
+
+a = int(input("Digite o número 1:"))
+b = int(input("Digite o número 2:"))
+
+print(op(a, b))'''
+
+#Escopo_local_e_global
+
+'''salario = 2000 #Váriavel global = Na raiz do programaa
+
+
+def salario_bonus(bonus):
+    global salario #Salario está no escopo global 
+    salario += bonus 
+    return salario
+
+x = int(input("Qual o valor do seu bonus:  "))
+
+salario_com_bonus = salario_bonus(x)  # 2500
+print(salario_com_bonus)'''
+
+salario = 2000 
+
+
+def salario_bonus(bonus):
+
+    global salario  
+
+    lista_aux = lista.copy()
+    y = int(input("Digite um número:  "))
+    lista_aux.append(y)
+    print(f"Lista aux= {lista_aux}")
+
+    salario += bonus 
+    return salario
+
+x = int(input("Qual o valor do seu bonus:  "))
+
+
+lista = [1]
+salario_com_bonus = salario_bonus(x)  
+print(salario_com_bonus)
+print(lista)
