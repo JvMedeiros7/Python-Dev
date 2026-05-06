@@ -153,7 +153,7 @@ x = int(input("Qual o valor do seu bonus:  "))
 salario_com_bonus = salario_bonus(x)  # 2500
 print(salario_com_bonus)'''
 
-salario = 2000 
+'''salario = 2000 
 
 
 def salario_bonus(bonus):
@@ -174,4 +174,4 @@ x = int(input("Qual o valor do seu bonus:  "))
 lista = [1]
 salario_com_bonus = salario_bonus(x)  
 print(salario_com_bonus)
-print(lista)
+print(lista)'''

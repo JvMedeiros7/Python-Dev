@@ -233,6 +233,8 @@ print(sorted(linguagens, key=lambda x: len(x)))  # ["c", "js", "java", "python",
 print(sorted(linguagens, key=lambda x: len(x), reverse=True))  # ["python", "csharp", "java", "js", "c"] ''' 
 
 
+
+
 #Livro Python
 
 '''z = [15 , 8 , 9]
@@ -320,9 +322,9 @@ print(f"A soma de todos os números foi: {s}")'''
 
 #Podemos adicionar listas com + 
 
-L = []
+'''L = []
 
 L = L + [1]
 
-print(L)
+print(L)'''
 
