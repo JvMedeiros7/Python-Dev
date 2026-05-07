@@ -156,7 +156,7 @@ while rodando:
 
 #Exe 6.5: Simulação de uma fila de banco
 
-ultimo1 = 10
+'''ultimo1 = 10
 ultimo2 = 10
 fila1 = list(range(1, ultimo1 + 1))
 fila2 = list(range(1, ultimo2 + 1))
@@ -197,7 +197,7 @@ while rodando:
                 
             elif tipo1 == "F": 
                 ultimo1 += 1
-                fila.append(ultimo1)
+                fila1.append(ultimo1)
                 print(f"Cliente {ultimo1} entrou na fila.")
             
             elif tipo1 == "S":
@@ -214,7 +214,7 @@ while rodando:
 
 #Bloco fila 2 
 
-    elif filadesejada == "b":     
+    elif filadesejada == "B":     
         print("Digite F para adicionar um cliente ao fim da fila 1,")
         print("Ou A para realizar o atendimento. S para sair.")
     
@@ -226,22 +226,22 @@ while rodando:
 
     # Enquanto houver caracteres na string 'operacao' para ler...
         while indice2 < len(operacao2):
-            tipo1 = operacao2[indice2]
+            tipo2 = operacao2[indice2]
             print(f"\n--- Processando comando: {tipo2} ---")
         
         # Correção 1: Uso do '==' para comparação.
         # Correção 2: Indentação perfeitamente alinhada para a estrutura if-elif-else (Aula 06).
             if tipo2 == "A":
                 if len(fila2) > 0:
-                    atendido = fila2.pop(0)  # Remove o primeiro da fila (índice 0)
+                    atendido2 = fila2.pop(0)  # Remove o primeiro da fila (índice 0)
                     print(f"Cliente {atendido2} atendido.")
                 else:
                 # Este 'else' pertence estritamente ao 'if len(fila) > 0'
                     print("Fila vazia! Ninguém para ser atendido.")
                 
-            elif tipo == "F": 
+            elif tipo2 == "F": 
                 ultimo2 += 1
-                fila.append(ultimo2)
+                fila2.append(ultimo2)
                 print(f"Cliente {ultimo2} entrou na fila.")
             
             elif tipo2 == "S":
@@ -255,4 +255,68 @@ while rodando:
             
         # O incremento do índice deve ficar fora das condições, para sempre avançar para a próxima letra.
             indice2 += 1 
+'''
 
+
+#Exe 6.5: Simulação de uma fila de banco
+
+ultimo1 = 10
+ultimo2 = 10
+fila1 = list(range(1, ultimo1 + 1))
+fila2 = list(range(1, ultimo2 + 1))
+
+rodando = True
+
+while rodando:
+    print(f"\nExistem {len(fila1)} clientes na fila 1 e {len(fila2)} clientes na fila 2.")
+    print(f"Fila 1 atual: {list(fila1)}  -  Fila 2 atual: {list(fila2)}")
+    print("\nDigite:")
+    print("[F] Chegada Fila 1  | [G] Chegada Fila 2")
+    print("[A] Atender Fila 1  | [B] Atender Fila 2")
+    print("[S] Sair do Sistema")
+    
+    operacao = input("-> Operação(ões): ").upper()
+
+    indice = 0 
+
+    # Enquanto houver caracteres na string 'operacao' para ler...
+    while indice < len(operacao):
+        tipo = operacao[indice]
+        print(f"\n--- Processando comando: {tipo} ---")
+        
+        # Correção 1: Uso do '==' para comparação.
+        # Correção 2: Indentação perfeitamente alinhada para a estrutura if-elif-else (Aula 06).
+        if tipo == "A":
+            if len(fila1) > 0:
+                atendido1 = fila1.pop(0)  # Remove o primeiro da fila (índice 0)
+                print(f"Cliente {atendido1} atendido.")
+            else:
+                # Este 'else' pertence estritamente ao 'if len(fila) > 0'
+                print("Fila vazia! Ninguém para ser atendido.")
+        elif tipo == "B":
+            if len(fila2) > 0:
+                atendido2 = fila2.pop(0)  # Remove o primeiro da fila (índice 0)
+                print(f"Cliente {atendido2} atendido.")
+            else:
+                # Este 'else' pertence estritamente ao 'if len(fila) > 0'
+                print("Fila vazia! Ninguém para ser atendido.")
+                
+        elif tipo == "F": 
+            ultimo1 += 1
+            fila1.append(ultimo1)
+            print(f"Cliente {ultimo1} entrou na fila.")
+        
+        elif tipo == "G": 
+            ultimo2 += 1
+            fila2.append(ultimo2)
+            print(f"Cliente {ultimo2} entrou na fila.")
+
+        elif tipo == "S":
+            # Correção 3: Verificamos 'tipo' e alteramos a flag do loop principal.
+            print("Encerrando o programa...")
+            rodando = False
+            break  # Interrompe o loop interno imediatamente. O loop externo não reiniciará pois rodando = False.  
+        else:
+            print(f"Operação inválida ({tipo}) ignorada! Use apenas F, G, A, B ou S.")
+            # O incremento do índice deve ficar fora das condições, para sempre avançar para a próxima letra.
+        indice += 1        
