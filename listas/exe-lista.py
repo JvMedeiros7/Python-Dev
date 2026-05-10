@@ -474,7 +474,7 @@ print(f"A quantidade de vezes que você digitou a : {a} \n A quantiadade que voc
 print(f"A letra a está nas posições: {listaa}")
 print(f"A letra b está nas posições: {listab}")'''
 
-#Programa 6.9: Pesquisa Sequencial
+'''#Programa 6.9: Pesquisa Sequencial
 
 L = [15, 7, 27, 39, 27, 7, 8, 9, 30, 27 ]
 
@@ -502,7 +502,14 @@ while x < len(L):
             p2pos.append(x)      
     x += 1
 
-print(f"A quantidade de vezes que localizamos seu valor foi: {p1num + p2num} 
-       A posição em que seu valor foi econtrado foi: {p1pos + p2pos}")
+print(f"A quantidade de vezes que localizamos seu valor foi: {p1num + p2num} \n A posição em que seu valor foi econtrado foi: {p1pos + p2pos}")'''
    
-
+L = []
+x = 1
+for v in range(x):
+    lv = input("Digite um valor para a lista(0 para sair): ")
+    if lv == "0":
+        break
+    x += 1
+    L.append(lv)
+print(L)

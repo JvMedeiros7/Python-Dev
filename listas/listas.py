@@ -328,3 +328,12 @@ L = L + [1]
 
 print(L)'''
 
+#Expressão For = a cada repetição, o próximo elemento da lista se repete.
+
+'''L = [1, 2, 3, 4, 5]
+pos1 = []
+for x in L:
+    print(x)
+    pos1.append(x)
+
+print(pos1)'''
