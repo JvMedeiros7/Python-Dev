@@ -452,7 +452,7 @@ else:
     print("Erro")'''
 
 
-expressão = input("Digite uma palavra:").upper()
+'''expressão = input("Digite uma palavra:").upper()
 x = 0
 a = 0
 b =  0 
@@ -461,7 +461,7 @@ listaa = []
 listab = []
 
 while x < len(expressão):
-    if expressão[x] == "A":
+    if expressão[x] == "A":                                          
         a +=1
         listaa.append(x)
     elif expressão[x] == "B":
@@ -472,5 +472,37 @@ while x < len(expressão):
 
 print(f"A quantidade de vezes que você digitou a : {a} \n A quantiadade que você digitou b : {b}")
 print(f"A letra a está nas posições: {listaa}")
-print(f"A letra b está nas posições: {listab}")
+print(f"A letra b está nas posições: {listab}")'''
+
+#Programa 6.9: Pesquisa Sequencial
+
+L = [15, 7, 27, 39, 27, 7, 8, 9, 30, 27 ]
+
+p1 = int(input("Digite o 1o valor a procurar:"))
+p2 = int(input("Digite o 2o valor a procurar:"))
+
+p1num = 0
+p1pos = []
+p2num = 0
+p2pos = []
+
+x = 0 
+
+while x < len(L):
+    if L[x] != p1 and L[x] != p2:
+        print(f"{p1} ou {p2} : não está na lista na posição {x}.")
+    else: 
+        if p1 == L[x]:
+            print(f"{p1} : achado na posição {x}.")
+            p1num += 1
+            p1pos.append(x)  
+        else:
+            print(f"{p2} : achado na posição {x}.")
+            p2num += 1
+            p2pos.append(x)      
+    x += 1
+
+print(f"A quantidade de vezes que localizamos seu valor foi: {p1num + p2num} 
+       A posição em que seu valor foi econtrado foi: {p1pos + p2pos}")
+   
 
