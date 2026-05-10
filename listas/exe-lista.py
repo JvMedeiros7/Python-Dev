@@ -258,7 +258,7 @@ while rodando:
 '''
 
 
-#Exe 6.5: Simulação de uma fila de banco
+'''#Exe 6.5: Simulação de uma fila de banco
 
 ultimo1 = 10
 ultimo2 = 10
@@ -319,4 +319,134 @@ while rodando:
         else:
             print(f"Operação inválida ({tipo}) ignorada! Use apenas F, G, A, B ou S.")
             # O incremento do índice deve ficar fora das condições, para sempre avançar para a próxima letra.
-        indice += 1        
+        indice += 1   '''     
+
+
+'''# Programa 6.8: Pilha de Pratos
+
+prato = 5
+pilha = list(range(1, prato + 1))
+
+while True:
+    print(f"\n existem {len(pilha)} pratos na pilha.")
+    print(f"Pilha atual: {pilha}")
+    print("Digite E para empilhar um novo prato,")
+    print("Ou D para desempilhar. S para Sair.")
+
+    operação = input("Operação (E, D OU S): ")
+    if operação == "D":
+        if len(pilha) > 0:
+            lavado = pilha.pop(-1)
+            print(f"Prato {lavado} lavado")
+        else:
+            print("Pilha Vazia! Nada para lavar.")
+    elif operação == "E":
+        prato += 1
+        pilha.append(prato)
+    elif operação == "S":
+        break
+    else:
+       print("Operação inválida! Digite apenas E,D ou S!")'''
+
+
+''' #Estrutura de dados / Leitura
+
+expressao = "(a+b)"
+x = 0
+
+# 1. CRIANDO A ESTRUTURA DE CONTROLE
+# Criamos uma lista vazia. É ela quem tem permissão para usar .append() e .pop()[cite: 1].
+pilha = []
+
+while x < len(expressao):
+    # Apenas LÊ a informação na posição x. Não alteramos essa variável.
+    caractere_atual = expressao[x]
+    
+    # --- ÁREA DA REGRA DE NEGÓCIO ---
+    
+    if caractere_atual == "(":
+        # Achamos uma abertura. Colocamos um "prato" na nossa lista.
+        pilha.append("(") 
+        
+    elif caractere_atual == ")":
+        # Achamos um fechamento. Retiramos o último "prato" da nossa lista[cite: 1].
+        pilha.pop()
+        
+    # --------------------------------
+    
+    # Motor do laço
+    x += 1 
+
+# Fim da varredura.
+
+(()) Ok
+()()(()()) Ok
+()) Erro'''
+
+
+'''# Expressões de teste baseadas no seu escopo
+exp_1 = "(())"          # Esperado: Ok
+exp_2 = "()()(()())"    # Esperado: Ok
+exp_3 = "())"           # Esperado: Erro (Tenta desempilhar pilha vazia)
+exp_4 = "(()"           # Esperado: Erro (Sobra elemento na pilha)
+
+expressao = exp_3 # Troque a variável aqui para testar os outros casos
+
+# 1. Inicializamos a nossa "Pilha" usando uma lista vazia
+pilha = []
+
+# 2. Todo 'while' precisa de uma variável de inicialização para o controle
+i = 0 
+
+# Variável de controle de estado (flag) para saber se a expressão quebrou a regra
+valida = True
+
+# 3. O 'while' repete o bloco enquanto o índice 'i' for menor que o tamanho da string
+while i < len(expressao):
+    caractere = expressao[i] # Acessamos o caractere na posição atual do índice
+    
+    if caractere == '(':
+        # REGRA 1: Sempre que encontrar '(', adiciona (empilha) ao final da lista[cite: 9]
+        pilha.append(caractere)
+        
+    elif caractere == ')':
+        # REGRA 2: Encontrou ')'. Antes de dar o pop(), verificamos o tamanho da lista[cite: 9]
+        # Isso previne o erro fatal de tentar desempilhar uma lista vazia.
+        if len(pilha) > 0:
+            pilha.pop() # Remove o último elemento inserido (desempilha)[cite: 9]
+        else:
+            # Se a pilha está vazia e chegou um ')', a ordem está errada.
+            valida = False
+            break # Interrompe o loop manualmente, pois já identificamos o erro fatal[cite: 8]
+            
+    # 4. Todo 'while' precisa da atualização da variável para não gerar loop infinito[cite: 8]
+    i += 1 
+
+# 5. Avaliação Fria do Estado Final
+# A expressão só é correta se não quebrou a regra no meio (valida == True) 
+# E se, no final de tudo, não sobrou nenhum '(' perdido (len(pilha) == 0)
+if valida and len(pilha) == 0:
+    print(f"A expressão '{expressao}' está: Ok")
+else:
+    print(f"A expressão '{expressao}' está: Erro")'''
+
+# Desejado
+
+
+expressão = input("Digite a sequência de parênteses a validar:")
+x = 0
+pilha = []
+while x < len(expressão):
+    if expressão[x] == "(":
+        pilha.append("(")
+    if expressão[x] == ")":
+        if len(pilha) > 0:
+            topo = pilha.pop(-1)
+        else:
+            pilha.append(")")  # Força a mensagem de erro
+            break
+    x = x + 1
+if len(pilha) == 0:
+    print("OK")
+else:
+    print("Erro")
