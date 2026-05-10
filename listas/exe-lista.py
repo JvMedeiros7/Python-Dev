@@ -433,7 +433,7 @@ else:
 # Desejado
 
 
-expressão = input("Digite a sequência de parênteses a validar:")
+'''expressão = input("Digite a sequência de parênteses a validar:")
 x = 0
 pilha = []
 while x < len(expressão):
@@ -449,4 +449,28 @@ while x < len(expressão):
 if len(pilha) == 0:
     print("OK")
 else:
-    print("Erro")
+    print("Erro")'''
+
+
+expressão = input("Digite uma palavra:").upper()
+x = 0
+a = 0
+b =  0 
+pilha = []
+listaa = []
+listab = []
+
+while x < len(expressão):
+    if expressão[x] == "A":
+        a +=1
+        listaa.append(x)
+    elif expressão[x] == "B":
+        b += 1
+        listab.append(x) 
+    x = x + 1
+
+
+print(f"A quantidade de vezes que você digitou a : {a} \n A quantiadade que você digitou b : {b}")
+print(f"A letra a está nas posições: {listaa}")
+print(f"A letra b está nas posições: {listab}")
+
