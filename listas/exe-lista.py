@@ -504,12 +504,169 @@ while x < len(L):
 
 print(f"A quantidade de vezes que localizamos seu valor foi: {p1num + p2num} \n A posição em que seu valor foi econtrado foi: {p1pos + p2pos}")'''
    
-L = []
+'''L = []
 x = 1
 for v in range(x):
+    x += 1
     lv = input("Digite um valor para a lista(0 para sair): ")
     if lv == "0":
         break
-    x += 1
     L.append(lv)
-print(L)
+print(L)'''
+
+#Exe 6.12
+
+'''L = [ 1, 7, 2 , 4]
+min = L[0]
+
+for e in L:
+    if e < min:
+        min = e
+
+print(min)'''
+
+'''T = [ - 10, -8, 0, 1, 2, 5, -2, -4]
+valor_min = T[0]
+valor_max = T[0]
+soma = 0 
+x = 0
+
+for e in T:
+    if e < valor_min:
+        valor_min = e
+    elif e > valor_max:
+        valor_max = e 
+    soma = soma + e
+    x += 1
+
+print(f"Nessas {x} temperaturas a média é:")
+print(f" MÉDIA : {soma/x}")
+print(f"A temperatura mais alta foi: {valor_max}")
+print(f"A temperatura mais baixa foi: {valor_min}")'''
+
+'''lugares_vagos = [10, 2, 1, 3, 0]
+
+sala = int(input("Sala (0 sai): "))
+
+lugares = int(input(f"Quantos lugares você deseja ({lugares_vagos[sala - 1]} vagos)? "))
+lugares_vagos[sala - 1] -= lugares
+
+# CORREÇÃO: Aspas fechadas no final e variável 'sala' isolada de forma limpa.
+print(f"Locais sobrando na sala {sala}: {lugares_vagos[sala - 1]}")'''
+
+
+#Programa 6.13:
+
+'''lugares_vagos = [ 10, 2, 1, 3, 0]
+ingressos_vendidos = [0, 0, 0, 0, 0]
+salas_dispo = [1,2,3,4,5]
+'''
+
+
+# 1. Inicializamos as listas completamente vazias
+# 1. Inicializamos as listas completamente vazias[cite: 1].
+'''lugares_vagos = []
+ingressos_vendidos = []
+
+# 2. Capturamos o tamanho do nosso domínio de negócio.
+total_salas = int(input("Quantas salas o cinema possui? "))
+
+# 3. Iteramos sobre o intervalo de salas.
+for i in range(total_salas):
+    capacidade = int(input(f"Qual a capacidade da sala {i + 1}? "))
+    # Injetamos os valores dinamicamente[cite: 1].
+    lugares_vagos.append(capacidade)
+    ingressos_vendidos.append(0)
+
+print("\n--- INICIALIZAÇÃO CONCLUÍDA ---")
+print(f"Salas configuradas: {len(lugares_vagos)}")
+print("-" * 31 + "\n")
+
+# 4. Loop infinito para o PDV (Ponto de Venda)[cite: 8].
+while True:
+    # A variável 'sala_escolhida' é exclusiva para a transação atual.
+    # NUNCA reutilize nomes de variáveis de estado em laços de repetição menores.
+    sala_escolhida = int(input("\nSala (0 sai): "))
+    
+    # Condição de saída[cite: 8].
+    if sala_escolhida == 0:
+        print("\nEncerrando vendas...")
+        break
+        
+    # Validação do limite da lista.
+    if sala_escolhida > len(lugares_vagos) or sala_escolhida < 1:
+        print("[ERRO] Sala inválida. Tente novamente.")
+    # Como a contagem do índice começa do zero, subtraímos 1 da escolha do usuário[cite: 1].
+    elif lugares_vagos[sala_escolhida - 1] == 0:
+        print("[AVISO] Desculpe, esta sala está lotada!")
+    else:
+        # Acesso direto via índice para recuperar os lugares disponíveis[cite: 1].
+        vagos_atuais = lugares_vagos[sala_escolhida - 1]
+        lugares_desejados = int(input(f"Quantos lugares você deseja ({vagos_atuais} vagos): "))
+        
+        # Validações lógicas de negócio
+        if lugares_desejados > vagos_atuais:
+            print("[ERRO] Esse número de lugares não está disponível.")
+        elif lugares_desejados <= 0:
+            print("[ERRO] Número de ingressos inválido.")
+        else:
+            # 5. Processamento da Transação (Mutabilidade da Lista)[cite: 1]
+            lugares_vagos[sala_escolhida - 1] -= lugares_desejados
+            ingressos_vendidos[sala_escolhida - 1] += lugares_desejados
+            
+            # Correção lógica: Se a sala_escolhida foi 1, imprimimos 1. Sem "+ 1" aqui.
+            print(f"[SUCESSO] {lugares_desejados} lugares vendidos para a Sala {sala_escolhida}.")
+            print(f"Total de ingressos vendidos na Sala {sala_escolhida}: {ingressos_vendidos[sala_escolhida - 1]}")
+    
+    print("\n--- UTILIZAÇÃO ATUAL DAS SALAS ---")
+    # 6. Uso correto do enumerate: saber o índice do objeto dentro do laço[cite: 1].
+    # Renomeamos as variáveis do iterador para não sobrescrever 'sala_escolhida'.
+    for idx_sala, qtd_vagos in enumerate(lugares_vagos):
+        print(f"Sala {idx_sala + 1} - {qtd_vagos} lugar(es) vazio(s).")
+
+print("\n--- RELATÓRIO FINAL DE VENDAS ---")
+# 7. Correção Crítica do IndexError. 
+# Iteramos sobre a lista de ingressos vendidos de forma limpa.
+for indice, vendidos in enumerate(ingressos_vendidos):
+    # Acessamos diretamente a variável 'vendidos' entregue pelo enumerate.
+    print(f"Sala {indice + 1} - {vendidos} ingresso(s) vendido(s).")
+'''
+
+n_salas = int(input("Número de salas: "))
+lugares_vagos = []
+for sala in range(n_salas):
+    lugares_vagos.append(int(input(f"Lugares vagos na sala {sala + 1}: ")))
+
+vendidos = [0] * len(lugares_vagos)
+while True:
+    sala = int(input("Sala (0 sai): "))
+    if sala == 0:
+        print("Fim")
+        break
+    if sala > len(lugares_vagos) or sala < 1:
+        print("Sala inválida")
+    elif lugares_vagos[sala - 1] == 0:
+        print("Desculpe, sala lotada!")
+    else:
+        lugares = int(
+            input(f"Quantos lugares você deseja ({lugares_vagos[sala - 1]} vagos):")
+        )
+        if lugares > lugares_vagos[sala - 1]:
+            print("Esse número de lugares não está disponível.")
+        elif lugares < 0:
+            print("Número inválido")
+        else:
+            lugares_vagos[sala - 1] -= lugares
+            vendidos[sala - 1] += lugares
+            print(f"{lugares} lugares vendidos")
+
+print("\nUtilização das salas")
+
+for sala, vagos in enumerate(lugares_vagos):
+    print(f"Sala {sala + 1} – {vagos} lugar(es) vazio(s)")
+print("\nVendas por sala")
+total_vendido = 0
+for sala, vendas in enumerate(vendidos):
+    print(f"Sala {sala + 1} – {vendas} ingressos vendido(s)")
+    total_vendido += vendas
+print(f"Total de ingressos vendidos: {total_vendido}")    

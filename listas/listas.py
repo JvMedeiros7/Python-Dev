@@ -337,3 +337,27 @@ for x in L:
     pos1.append(x)
 
 print(pos1)'''
+
+#Função Enumerate
+
+'''L = [ 5, 9 , 13]
+X = 0
+
+for e in L:
+    print(f"[{X+1}] {e}")
+    X +=1'''
+
+'''L = [ 5, 9 , 13]
+for x, e in enumerate(L):
+    print(f"[{x} {e}]")'''
+
+'''L = [5, 9, 13]
+
+for z in enumerate(L):
+    # 'z' é a tupla, ex: (0, 5)
+    # Aqui ocorre o desempacotamento:
+    x, e = z 
+    
+    # x recebe a posição, e recebe o dado real
+    print(f"Índice [{x}] contém o valor {e}")
+    print(z)'''
