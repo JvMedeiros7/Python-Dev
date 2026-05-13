@@ -632,7 +632,7 @@ for indice, vendidos in enumerate(ingressos_vendidos):
     print(f"Sala {indice + 1} - {vendidos} ingresso(s) vendido(s).")
 '''
 
-n_salas = int(input("Número de salas: "))
+'''n_salas = int(input("Número de salas: "))
 lugares_vagos = []
 for sala in range(n_salas):
     lugares_vagos.append(int(input(f"Lugares vagos na sala {sala + 1}: ")))
@@ -669,4 +669,10 @@ total_vendido = 0
 for sala, vendas in enumerate(vendidos):
     print(f"Sala {sala + 1} – {vendas} ingressos vendido(s)")
     total_vendido += vendas
-print(f"Total de ingressos vendidos: {total_vendido}")    
+print(f"Total de ingressos vendidos: {total_vendido}")    '''
+
+L = ["maças", "peras" , "Kiwis"]
+for s in L:
+    print(s)
+    for letra in s:
+        print(letra)
