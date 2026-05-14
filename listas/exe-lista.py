@@ -671,8 +671,3 @@ for sala, vendas in enumerate(vendidos):
     total_vendido += vendas
 print(f"Total de ingressos vendidos: {total_vendido}")    '''
 
-L = ["maças", "peras" , "Kiwis"]
-for s in L:
-    print(s)
-    for letra in s:
-        print(letra)

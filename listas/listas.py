@@ -361,3 +361,73 @@ for z in enumerate(L):
     # x recebe a posição, e recebe o dado real
     print(f"Índice [{x}] contém o valor {e}")
     print(z)'''
+
+
+#Impressão de uma lsita de string, letra a letra
+'''
+L = ["maças", "peras" , "Kiwis"]
+for s in L:
+    print(s)
+    for letra in s:
+        print(letra)
+        if letra == "a":
+            print("Você achou A")
+'''
+#Para acessar as listas
+
+'''produto1 = ["maça", 10, 0.30]
+produto2 = ["pera" , 5, 0.75]
+produto3 = ["kiwi" , 4 , 0.98]
+compras = [produto1 , produto2 , produto3]
+
+print(compras[1][2]) #Acessar o 0.75 - preço do produto 2
+
+for e in compras:
+    print(e)
+    print(f"Produto : {e[0]}")
+    print(f"Quantidade : {e[1]}")
+    print(f"Preço : {e[2]:5.2f}")'''
+
+#Programa 6.19 
+
+'''compras = []
+rodando = True
+
+while rodando == True:
+    print("=" * 5 ,"CADASTRO DE PRODUTOS" , "=" * 5)
+    produto = input("\nCADASTRE SEU PRODUTO:")
+    quantidade = int(input("QUANTIDADE:"))
+    preco = float(input("PREÇO DO PRODUTO: "))
+    compras.append([produto , quantidade , preco])
+    fim = input("QUER ENCERRAR O PROGRAMA? S / N: ")
+    if fim == "S":
+        rodando = False 
+        break
+
+soma = 0.0 
+for e in compras:
+    print(f"{e[0]:20s} x {e[1]:5d} {e[2]:5.2f} {e[1] * e[2]:6.2f}")
+    soma += e[1] * e[2]
+
+print(f"Total : {soma:7.2f}")'''
+
+# Programa 6.20 : Ordenação pelo método de Bolhas.
+
+L = [7, 4, 3, 12, 8]
+fim = 5
+while fim > 1:
+    trocou = False
+    x = 0
+    while x < (fim - 1):
+        if L[x] > L[x + 1]:
+            trocou = True
+            temp = L[x]
+            L[x] = L[x+1]
+            L[x+1] = temp
+        x +=1
+    if not trocou:
+        break
+    fim -= 1 
+for e in L:
+    print(e)
+         
