@@ -411,15 +411,15 @@ for e in compras:
 
 print(f"Total : {soma:7.2f}")'''
 
-# Programa 6.20 : Ordenação pelo método de Bolhas.
+# Programa 6.20 : Ordenação pelo método de Bolhas - DESCRECENTE / CRESCENTE .
 
-L = [7, 4, 3, 12, 8]
+'''L = [1 , 2 , 3 , 4 , 5 ]
 fim = 5
 while fim > 1:
     trocou = False
     x = 0
     while x < (fim - 1):
-        if L[x] > L[x + 1]:
+        if L[x] < L[x + 1]: #ALTERAMOS O SINAL AQUI PARA SABERMOS SE É CRESCENTE OU DECRESCENTE 
             trocou = True
             temp = L[x]
             L[x] = L[x+1]
@@ -430,4 +430,55 @@ while fim > 1:
     fim -= 1 
 for e in L:
     print(e)
-         
+'''
+
+'''L = [ 6, 4 , 2 , 1 , 9]
+L.sort()
+print(L)
+sorted(L)
+print(L)
+'''
+# ==============================================================================
+# DEMONSTRAÇÃO PRÁTICA: .sort() vs sorted()
+# ==============================================================================
+
+# Cenário 1: Método .sort() -> Modificação In-place (Diretamente na Memória)
+linguagens_projeto_a = ["python", "js", "c", "java", "csharp"]
+retorno_sort = linguagens_projeto_a.sort() # Ordena a lista original
+
+print("=== TESTANDO O MÉTODO .sort() ===")
+print(f"Lista Original após .sort(): {linguagens_projeto_a}") 
+print(f"O que o método retornou?: {retorno_sort}") 
+# IMPACTO EM PRODUÇÃO: O retorno é estritamente None! 
+# Se você fizer 'lista = lista.sort()', você destrói sua coleção de dados.
+
+print("-" * 60)
+
+# Cenário 2: Função sorted() -> Criação de um Novo Objeto (Imutabilidade)
+linguagens_projeto_b = ["python", "js", "c", "java", "csharp"]
+nova_lista_ordenada = sorted(linguagens_projeto_b) # Gera uma nova lista
+
+print("=== TESTANDO A FUNÇÃO sorted() ===")
+print(f"Lista Original após sorted(): {linguagens_projeto_b}") # Intacta!
+print(f"Nova Lista Gerada: {nova_lista_ordenada}")
+# IMPACTO EM PRODUÇÃO: Aloca um novo espaço de memória para a nova lista.
+
+
+def insertion_sort(lista):
+    # Começamos do segundo elemento (índice 1), pois o primeiro já é considerado "ordenado"
+    for i in range(1, len(lista)):
+        chave = lista[i]
+        j = i - 1
+        
+        # Desloca os elementos que são maiores que a chave para uma posição à frente
+        while j >= 0 and lista[j] > chave:
+            lista[j + 1] = lista[j]
+            j -= 1
+            
+        # Insere a chave na sua posição correta
+        lista[j + 1] = chave
+    return lista
+
+# Execução na IDE
+dados = [5, 2, 9, 1, 5, 6]
+print(f"Insertion Sort Resultado: {insertion_sort(dados)}")
