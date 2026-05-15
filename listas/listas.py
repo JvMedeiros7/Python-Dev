@@ -438,7 +438,7 @@ print(L)
 sorted(L)
 print(L)
 '''
-# ==============================================================================
+'''# ==============================================================================
 # DEMONSTRAÇÃO PRÁTICA: .sort() vs sorted()
 # ==============================================================================
 
@@ -482,3 +482,55 @@ def insertion_sort(lista):
 # Execução na IDE
 dados = [5, 2, 9, 1, 5, 6]
 print(f"Insertion Sort Resultado: {insertion_sort(dados)}")
+
+def merge_sort(lista):
+    if len(lista) <= 1:
+        return lista
+        
+    # Abordagem de fatiamento (slicing) estudada na Aula 01 / [Dio] Listas
+    meio = len(lista) // 2
+    esquerda = merge_sort(lista[:meio])
+    direita = merge_sort(lista[meio:])
+    
+    return merge(esquerda, droite=direita)
+
+def merge(esquerda, direita):
+    resultado = []
+    i = j = 0
+    
+    # Compara os elementos de ambas as sublistas e os combina em ordem
+    while i < len(esquerda) and j < len(direita):
+        if esquerda[i] < direita[j]:
+            resultado.append(esquerda[i])
+            i += 1
+        else:
+            resultado.append(direita[j])
+            j += 1
+            
+    # Adiciona os elementos restantes de ambas as listas
+    resultado.extend(esquerda[i:])
+    resultado.extend(direita[j:])
+    return resultado
+
+# Execução na IDE
+dados = [38, 27, 43, 3, 9, 82, 10]
+print(f"Merge Sort Resultado: {merge_sort(dados)}")
+
+def quick_sort(lista):
+    if len(lista) <= 1:
+        return lista
+    else:
+        # Escolha do pivô (neste caso, o elemento central)
+        pivo = lista[len(lista) // 2]
+        
+        # Particionamento usando compreensões de lista (Aula 01 / [Dio] Listas)
+        menores = [x for x in lista if x < pivo]
+        iguais  = [x for x in lista if x == pivo]
+        maiores = [x for x in lista if x > pivo]
+        
+        return quick_sort(menores) + iguais + quick_sort(maiores)
+
+# Execução na IDE
+dados = [10, 7, 8, 9, 1, 5]
+print(f"Quick Sort Resultado: {quick_sort(dados)}")'''
+

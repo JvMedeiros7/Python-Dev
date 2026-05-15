@@ -195,3 +195,100 @@ print(resultado)
 
 resultado = "telefone" in contatos["giovanna@gmail.com"]  # True
 print(resultado)'''
+
+#Livro Python Nilo Ney Coutinho
+
+'''tabela = {
+    "alface" : 0.45 , 
+    "batata" : 1.20 , 
+    "tomate" : 2.30
+}
+
+print(tabela["batata"])
+
+for chave in tabela:
+    print(f"A chave é {chave} e o valor é {[tabela[chave]]}")
+    '''
+
+'''tabela = {
+    "alface" : 0.45 , 
+    "batata" : 1.20 , 
+    "tomate" : 2.30 , 
+    "feijão" : 1.98 
+}
+
+a = []
+
+a = tabela.keys()
+
+print(a)
+print(tabela.keys())
+print(tabela.values())
+'''
+
+# Criamos um dicionário simulado usando a lógica de listas aninhadas da aula
+# Cada índice representa uma "vaga" ou "gaveta" na memória
+estacionamento_hash = {
+    411: [],
+    412: [],  # Esta vaga receberá a colisão
+    413: []
+}
+
+# --- ENTRADA DE DADOS (Simulando o mapeamento) ---
+
+# Carro A chega e o cálculo aponta para a vaga 412
+# Usamos o método .append() para adicionar o par [Chave, Valor]
+estacionamento_hash[412].append(["Placa-XYZ", "Jeep Compass"])
+
+# Carro B chega, o cálculo também dá vaga 412 (Colisão!)
+# O sistema não apaga o primeiro; ele adiciona no final da sublista
+estacionamento_hash[412].append(["Placa-ABC", "BYD Dolphin"])
+
+
+# --- BUSCA DE DADOS (Como o sistema localiza) ---
+
+placa_procurada = "Placa-ABC"
+vaga_calculada = 412
+
+# O sistema vai direto na vaga 412 e faz a varredura interna (Slide 16 - for)
+for carro in estacionamento_hash[vaga_calculada]:
+    if carro[0] == placa_procurada:
+        print(f"Resultado da IDE -> Carro localizado na vaga {vaga_calculada}: {carro[1]}")
+
+# Estado inicial da memória com a colisão na vaga 412
+estacionamento_hash = {
+    411: [],
+    412: [["Placa-XYZ", "Jeep Compass"], ["Placa-ABC", "BYD Dolphin"]],
+    413: []
+}
+
+# Parâmetros de entrada para o Checkout
+placa_para_remover = "Placa-XYZ"
+vaga_calculada = 412
+
+print("--- ANTES DO CHECKOUT ---")
+print(f"Vaga {vaga_calculada}: {estacionamento_hash[vaga_calculada]}")
+
+# --- ENGENHARIA DA SOLUÇÃO ---
+
+# 1. Ponteiro para guardar o objeto que será localizado
+carro_alvo = None
+
+# 2. Percorremos as sublistas da vaga (Slide 16 - for)
+for carro in estacionamento_hash[vaga_calculada]:
+    # carro[0] acessa a chave (Placa), carro[1] acessa o valor (Modelo)
+    if carro[0] == placa_para_remover:
+        carro_alvo = carro  # Capturamos a referência exata da sublista
+        break               # Abortamos o loop imediatamente (otimização de CPU)
+
+# 3. Se o ponteiro foi preenchido, executamos a remoção do bloco
+if carro_alvo is not None:
+    # Remove a sublista inteira correspondente (Slide 9 - remove())
+    estacionamento_hash[vaga_calculada].remove(carro_alvo)
+    print(f"\n[SUCESSO] Veículo {carro_alvo[1]} liberado da vaga {vaga_calculada}.")
+else:
+    print(f"\n[ERRO] Placa {placa_para_remover} não encontrada na vaga {vaga_calculada}.")
+
+
+print("\n--- DEPOIS DO CHECKOUT ---")
+print(f"Vaga {vaga_calculada}: {estacionamento_hash[vaga_calculada]}")
