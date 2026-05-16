@@ -226,7 +226,7 @@ print(tabela.keys())
 print(tabela.values())
 '''
 
-# Criamos um dicionário simulado usando a lógica de listas aninhadas da aula
+'''# Criamos um dicionário simulado usando a lógica de listas aninhadas da aula
 # Cada índice representa uma "vaga" ou "gaveta" na memória
 estacionamento_hash = {
     411: [],
@@ -291,4 +291,72 @@ else:
 
 
 print("\n--- DEPOIS DO CHECKOUT ---")
-print(f"Vaga {vaga_calculada}: {estacionamento_hash[vaga_calculada]}")
+print(f"Vaga {vaga_calculada}: {estacionamento_hash[vaga_calculada]}")'''
+
+estoque = {
+    "tomate": [1000, 2.30],
+    "alface": [500, 0.45],
+    "batata": [2001, 1.20],
+    "feijão": [100, 1.50],
+}
+total = 0
+print("Vendas:\n")
+while True:
+    produto = input("Nome do produto (fim para sair):")
+    if produto == "fim":
+        break
+    if produto in estoque:
+        quantidade = int(input("Quantidade:"))
+        if quantidade <= estoque[produto][0]:
+            preço = estoque[produto][1]
+            custo = preço * quantidade
+            print(f"{produto:12s}: {quantidade:3d} x {preço:6.2f} = {custo:6.2f}")
+            estoque[produto][0] -= quantidade
+            total += custo
+        else:
+            print("Quantidade solicitada não disponível")
+    else:
+        print("Nome de produto inválido")
+print(f" Custo total: {total:21.2f}\n")
+print("Estoque:\n")
+for chave, dados in estoque.items():
+    print("Descrição: ", chave)
+    print("Quantidade: ", dados[0])
+    print(f"Preço: {dados[1]:6.2f}\n")
+
+
+
+
+
+
+
+
+
+'''    while True:
+        p = input("Qual produto você quer?")
+        q = int(input("Qual a quantidade:"))
+        sair = input("Você deseja sair? (0) PARA SAIR")
+        if sair == "0":
+            break
+        historico_vendas = []
+        historico_vendas.append([p , q ])
+        print(historico_vendas)
+        total = 0
+        print("Vendas:\n")
+        for operacao in venda:
+            produto = p
+            quantidade = q 
+            produto, quantidade = operacao
+            preço = estoque[produto][1]
+            custo = preço * quantidade
+            print(f"{produto:12s}: {quantidade:3d} x {preço:6.2f} = {custo:6.2f}")
+            estoque[produto][0] -= quantidade
+            total += custo
+            print(f" Custo total: {total:21.2f} \n")
+            print("Estoque:\n")
+            for chave, dados in estoque.items():
+                print(chave)
+                print(dados)
+                print("Descrição: " , chave)
+                print("Quantidade: ", dados [0])
+                print(f"Preço: {dados[1]:6.2f}\n")'''
