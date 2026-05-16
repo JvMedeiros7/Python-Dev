@@ -293,7 +293,7 @@ else:
 print("\n--- DEPOIS DO CHECKOUT ---")
 print(f"Vaga {vaga_calculada}: {estacionamento_hash[vaga_calculada]}")'''
 
-estoque = {
+'''estoque = {
     "tomate": [1000, 2.30],
     "alface": [500, 0.45],
     "batata": [2001, 1.20],
@@ -322,7 +322,21 @@ print("Estoque:\n")
 for chave, dados in estoque.items():
     print("Descrição: ", chave)
     print("Quantidade: ", dados[0])
-    print(f"Preço: {dados[1]:6.2f}\n")
+    print(f"Preço: {dados[1]:6.2f}\n")'''
+
+
+dici = {
+
+}
+palavra = input("Digite uma palavra:")
+
+for letras in palavra:
+    print(letras)
+    if letras in dici:
+        dici[letras] = dici[letras]+1
+    else: 
+        dici[letras] = 1
+print(dici)
 
 
 
