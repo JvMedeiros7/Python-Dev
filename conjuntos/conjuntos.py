@@ -150,3 +150,70 @@ print(len(numeros)) '''
 
 print(1 in numeros)
 print(10 in numeros) ''' 
+
+'''# SOLUÇÃO DEFINITIVA EM PRODUÇÃO (Itens 1 ao 4)
+E = [1, 2, 6, 8]
+F = [3, 6, 8, 9]
+
+var1 = set(E)
+var2 = set(F)
+
+# 1. Valores comuns às duas (Interseção pura, não união)
+comuns = var1.intersection(var2)
+print(f"1. Valores comuns: {comuns}") 
+# Saída IDE: {8, 6}
+
+# 2. Valores que só existem na primeira (Diferença direta)
+dif1 = var1.difference(var2)
+print(f"2. Só na primeira: {dif1}") 
+# Saída IDE: {1, 2}
+
+# 3. Valores que só existem na segunda (Diferença direta)
+dif2 = var2.difference(var1)
+print(f"3. Só na segunda: {dif2}") 
+# Saída IDE: {9, 3}
+
+# 4. Lista com os elementos não repetidos das duas listas (Diferença Simétrica)
+nao_repetidos = var1.symmetric_difference(var2)
+print(f"4. Não repetidos nas duas: {nao_repetidos}") 
+# Saída IDE: {1, 2, 3, 9}
+
+item_5 = var1.difference(var2)
+print(f"5. A primeira sem os repetidos na segunda: {item_5}")
+# Saída IDE: {1, 2}'''
+
+ANTES = [1, 2, 5, 6, 9]
+DEPOIS = [1, 2, 8, 10]
+
+conjunto_1 = set(ANTES)
+conjunto_2 = set(DEPOIS)
+
+#Elementos que estão em antes que precisam estar em depois
+
+nao_mudou = conjunto_1.intersection(conjunto_2)
+print(f"Os elementos que não mudaram foram: {nao_mudou}")
+
+#Novos elementos 
+
+novos = conjunto_2.difference(conjunto_1)
+print(f"Os elementos novos foram: {novos}")
+
+#Elementos que foram removidos
+
+removidos = conjunto_1.difference(conjunto_2)
+print(f"Os elementos removidos foram: {removidos}")
+
+
+ANTES = [1, 2, 5, 6, 9]
+DEPOIS = [1, 2, 8, 10]
+
+conjunto_antes = set(ANTES)
+conjunto_depois = set(DEPOIS)
+
+# Conjuntos suportam o operador & para realizar a interseção, ou seja,
+# A & B resulta no conjunto de elementos presentes em A e B
+print("Antes:", ANTES)
+print("Depois:", DEPOIS)
+print("Elementos que não mudaram: ", conjunto_antes & conjunto_depois)
+print("Elementos novos", conjunto_depois - conjunto_antes)
+print("Elementos que foram removidos", conjunto_antes - conjunto_depois)
