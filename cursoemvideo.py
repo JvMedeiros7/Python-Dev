@@ -29,4 +29,10 @@ while True:
 
 lanche = ("Hamburguer", "Suco", "Pizza", "Pudim")
 
-print(lanche)
+print(lanche[1])
+
+x = 0
+
+for comida in lanche:
+    x += 1
+    print(f"Eu vou comer {x}: {comida}")
