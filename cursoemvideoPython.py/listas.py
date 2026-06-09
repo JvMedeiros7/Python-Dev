@@ -1,4 +1,4 @@
-# ============================================================
+'''# ============================================================
 #  LISTAS EM PYTHON — Guia passo a passo
 # ============================================================
 
@@ -190,13 +190,57 @@ print(f"b = a[:] cria uma COPIA independente de a: {b}")
 b[2] = 8
 print(f"\nApos b[2] = 8:")
 print(f"  a: {a}  -> nao foi alterada (sao listas diferentes)")
-print(f"  b: {b}  -> so b foi alterada")
+print(f"  b: {b}  -> so b foi alterada")'''
+
+'''pessoas = [('Joao', 25), ('Maria', 30), ('Pedro', 20)]
+
+for nome, idade in pessoas:
+    print(f"Nome: {nome}, Idade: {idade}")
+    dados = (nome, idade)
+    print(f"Dados da pessoa: {dados}")  # tupla com nome e idade
+
+print(f"\nLista de pessoas: {pessoas}")
+print(f"Tipo da lista: {type(pessoas)}  # listas podem conter tipos misturados")
+
+pos = int(input("Digite a posicao da pessoa que deseja acessar: "))
+
+if 0 <= pos < len(pessoas):
+    nome, idade = pessoas[pos]
+    print(f"Nome: {nome}, Idade: {idade}")
+else:
+    print("Posicao invalida.")
+
+nomebuscado = input("Digite o nome da pessoa para acessar os dados: ")
+qualdados = int(input("Digite 0 para nome ou 1 para idade: "))
+
+pessoa = next((p for p in pessoas if p[0].lower() == nomebuscado.lower()), None)
+if pessoa:
+    print(f"Dados de {pessoa[0]}: {pessoa[qualdados]}")
+else:
+    print(f"Pessoa '{nomebuscado}' nao encontrada.")'''
 
 
+teste = list()
+teste.append('gustavo')
+teste.append(40)
+print(f"teste criado:                    {teste}")
 
+galera = list()
+galera.append(teste)                       # referência, não cópia
+print(f"galera após append(teste):       {galera}")
 
+teste[0] = 'maria'
+teste[1] = 22
+print(f"teste após alteração:            {teste}")
+print(f"galera mudou junto (referência): {galera}")
 
+galera.append(teste[:])                    # cópia independente de teste neste momento
+print(f"galera após append de cópia:     {galera}")
 
-
-
+teste[0] = 'joao'
+teste[1] = 23
+print(f"\nteste após nova alteração:       {teste}")
+print(f"galera[0] mudou (referência):    {galera[0]}")
+print(f"galera[1] não mudou (cópia):     {galera[1]}")
+print(f"galera completo:                 {galera}")
 

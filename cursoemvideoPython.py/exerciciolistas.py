@@ -97,7 +97,7 @@ print(f'Os valores totais digitados foram: {sorted(valores_totais)}')'''
 
 #Desafio 083
 
-expr = str(input('Digite uma expressão: ')).strip()
+'''expr = str(input('Digite uma expressão: ')).strip()
 pilha = []
 
 for simb in expr:
@@ -112,4 +112,4 @@ for simb in expr:
 if len(pilha) == 0:
     print('Sua expressão é válida!')
 else:
-    print('Sua expressão é inválida!')
+    print('Sua expressão é inválida!')'''
