@@ -1,4 +1,4 @@
-s = "Alo mundo "
+'''s = "Alo mundo "
 
 #Transforma String em lista para poder manipular, pq strings são imutaveis
 L = list(s)
@@ -43,7 +43,9 @@ print("Pedro" not in nome)  # True
 
 #O operador in pode ser utilizado em Listas
 
-#PAara contar as ocorrências de uma letra ou palavra, use o metodo Count
+#PAara contar as ocorrências de uma letra ou palavra, use o metodo Count'''
+
+
 
 
 
