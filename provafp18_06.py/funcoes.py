@@ -19,6 +19,3 @@ def mostrar_linha():
     print("-" * 30) 
 mostrar_linha()  # Saída: ------------------------------
 
-
-mostrar_linha()  # Saída: ------------------------------
-print("Bem-vindo ao programa!")
